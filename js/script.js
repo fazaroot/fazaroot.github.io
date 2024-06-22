@@ -7,13 +7,13 @@ document.getElementById('khodamForm').addEventListener('submit', function(event)
 
 function getKhodamMessage(name) {
     const khodamList = [
-        'Khodam Beruang Manis',
-        'Khodam Kucing Lucu',
-        'Khodam Kuda Terbang',
-        'Khodam Elang Gagah',
-        'Khodam Singa Bijak',
-        'Khodam Harimau Ceria',
-        'Khodam Burung Beo Pintar',
+        'Gragas Warog',
+        'Singat Nongko',
+        'Ulo kadut',
+        'Tomang bodas',
+        'Curut clutak',
+        'Werog Teammor',
+        // 'Khodam Burung Beo Pintar',
         'Khodam Kelinci Cepat'
     ];
 
